@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
+    "watch": "sass --watch src/resources/scss:src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,7 +16,8 @@
   "dependencies": {
     "express": "^5.1.0",
     "express-handlebars": "^8.0.1",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "sass": "^1.94.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
