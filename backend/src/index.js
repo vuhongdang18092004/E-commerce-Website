@@ -7,6 +7,8 @@ const app = express();
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.engine("hbs", engine({ extname: ".hbs" }));
 app.set("view engine", "hbs");
@@ -21,6 +23,11 @@ app.get("/", (req, res) => {
 app.get("/new", (req, res) => {
   console.log(req.query);
   res.render("new");
+});
+
+app.post("/new", (req, res) => {
+  console.log(req.body);
+  res.send("");
 });
 
 app.listen(port, () => {
