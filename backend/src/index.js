@@ -6,6 +6,8 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+const routes = require("./routes");
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,19 +18,21 @@ app.set("views", path.join(__dirname, "resources/views"));
 
 // app.use(morgan("combined"));
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
+routes(app);
 
-app.get("/new", (req, res) => {
-  console.log(req.query);
-  res.render("new");
-});
+// app.get("/", (req, res) => {
+//   res.render("home");
+// });
 
-app.post("/new", (req, res) => {
-  console.log(req.body);
-  res.send("");
-});
+// // app.get("/new", (req, res) => {
+// //   console.log(req.query);
+// //   res.render("new");
+// // });
+
+// app.post("/new", (req, res) => {
+//   console.log(req.body);
+//   res.send("");
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
