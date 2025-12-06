@@ -1,7 +1,13 @@
+const Course = require('../models/Course');
+
 class NewController {
-  // [GET] /new
-  index(req, res) {
-    res.render('new');
+  async index(req, res) {
+    try {
+      const courses = await Course.find({});
+      res.json(courses);
+    } catch (error) {
+      res.status(400).json({ error: 'ERROR!!!' });
+    }
   }
 
   show(req, res) {
