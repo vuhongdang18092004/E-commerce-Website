@@ -1,8 +1,15 @@
-<form method="POST" action="">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Search</label>
-    <input type="text" name="q" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
+<h1>Danh sách khóa học</h1>
 
-  <button type="submit" class="btn btn-primary">Search</button>
-</form>
+<div class="course-list">
+  {{#each courses}}
+    <div class="course-item">
+      <img src="{{this.img}}" alt="{{this.name}}" class="course-img" />
+
+      <h2 class="course-name">{{this.name}}</h2>
+
+      <p class="course-title">
+        {{this.title}}
+      </p>
+    </div>
+  {{/each}}
+</div>
