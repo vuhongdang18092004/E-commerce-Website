@@ -1,15 +1,26 @@
-<h1>Danh sách khóa học</h1>
+<h1 class="text-center my-4">Danh sách khóa học</h1>
 
-<div class="course-list">
-  {{#each courses}}
-    <div class="course-item">
-      <img src="{{this.img}}" alt="{{this.name}}" class="course-img" />
+<div class="container">
+  <div class="row g-4">
+    {{#each courses}}
+      <div class="col-md-4 col-sm-6">
+        <div class="card h-100 shadow-sm">
+          <img src="{{this.img}}" class="card-img-top" alt="{{this.name}}" />
 
-      <h2 class="course-name">{{this.name}}</h2>
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text text-muted">
+              {{this.title}}
+            </p>
+          </div>
 
-      <p class="course-title">
-        {{this.title}}
-      </p>
-    </div>
-  {{/each}}
+          <div class="card-footer bg-white border-0">
+            <a href="/courses/{{this.slug}}" class="btn btn-primary w-100">
+              Xem chi tiết
+            </a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </div>
