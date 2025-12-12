@@ -8,7 +8,7 @@ Bao gồm 2 giao diện chính: **Admin Dashboard** và **Client/User Website**.
 ## Công nghệ sử dụng
 
 ### **Frontend**
-- **Next.js 14**
+- **Next.js**
 - **TailwindCSS**
 - **TypeScript**
 
@@ -24,6 +24,9 @@ Bao gồm 2 giao diện chính: **Admin Dashboard** và **Client/User Website**.
 
 ### **Storage (Media Upload)**
 - MongoDB GridFS hoặc Cloud Storage (Cloudinary / Supabase / AWS S3)
+
+### **Deploy**
+- Dự định deploy trên Vercel — nền tảng tối ưu cho Next.js.
 
 ---
 
